@@ -1,13 +1,21 @@
-let removeVowels = require("./remove-vowels");
+function removeVowels(word) {
+  let characters = word.split("");
 
-function removeVowelsFromWords(words) {
-  let result = words.map(function (word) {
-    return removeVowels(word);
+  let result = [];
+
+  characters.forEach(function (character) {
+    if (
+      character !== "a" &&
+      character !== "o" &&
+      character !== "i" &&
+      character !== "e" &&
+      character !== "u"
+    ) {
+      result.push(character);
+    }
   });
-
-  return result;
+  return result.join("");
 }
-
 
 module.exports = removeVowelsFromWords;
 
